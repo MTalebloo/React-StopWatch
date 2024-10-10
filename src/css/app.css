@@ -1,0 +1,18 @@
+body{
+    box-sizing: border-box;
+    margin: 0;
+    background: rgb(2,40,33);
+    background: radial-gradient(circle, rgba(2,40,33,1) 0%, rgba(0,57,52,1) 100%);
+}
+.btn{
+    transition: 20s;
+    background: rgb(0,208,171);
+    background: radial-gradient(circle, rgba(0,208,171,1) 0%, rgba(0,170,141,1) 100%);
+    
+}
+.btn:hover{
+    background: rgb(0,170,141);
+    background: radial-gradient(circle, rgba(0,170,141,1) 0%, rgba(0,136,117,1) 100%);
+}
+
+  
