@@ -35,6 +35,9 @@ const Timer= () => {
     let newTime = `${Hour < 10 ?"0" +Hour :Hour} : ${Minute < 10 ?"0" +Minute :Minute} : ${Second < 10 ?"0" +Second :Second}`
     setSaveTime([...SaveTime, newTime])
   }
+const HandleDeleteTime= (e) => {
+  setSaveTime(SaveTime.filter(target => target !== e.target.innerHTML))
+}
   return (
     <div className="App">
       <div className='container' style={{ 
@@ -47,12 +50,12 @@ const Timer= () => {
         <Typography gutterBottom variant="h5" component="div" color='#eafff8'>
           Timer
         </Typography>
-        <Typography variant="body2" sx={{ color: '#cbffee' }}>
+        <Typography variant="body2" sx={{ color: '#cbffee' }} className='Zero'>
         {`${Hour < 10 ?"0" +Hour :Hour} : ${Minute < 10 ?"0" +Minute :Minute} : ${Second < 10 ?"0" +Second :Second}`}
         </Typography>
       </CardContent>
       <CardActions>
-      <p>{SaveTime.map((c) => (<Typography key={Math.random()} variant='h5' sx={{color:"#eafff8"}}>{c}</Typography>)) }</p>
+      <p>{SaveTime.map((c) => (<p onClick={HandleDeleteTime} key={Math.random()} style={{color:"#eafff8",cursor:"pointer"}}>{c}</p>)) }</p>
       <ButtonGroup variant="contained" aria-label="Basic button group" sx={{height: 55}}>
       <Button onClick={HandleSetTime} className='btn'>Start Time</Button>
       <Button onClick={HandleStopTime} className='btn'>Stop Time</Button>
